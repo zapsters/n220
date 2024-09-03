@@ -15,9 +15,6 @@
       <li id="increment">Increment:</li>
       <li id="decrement">Decrement:</li>
     </ul>
-    <h2>Increment/Decrement Issue</h2>
-    <p id="before">Before:</p>
-    <p id="after">After:</p>
     <h1>Assignment</h1>
     <ul>
       <li id="notSign">Not:</li>
@@ -51,8 +48,27 @@
         " --3 = " + incrementNumber--;
 
       //Assignment
+      document.getElementById("notSign").innerHTML += " !5 = " + !5;
+      document.getElementById("notSign").innerHTML +=
+        " <br>&emsp;&emsp;!0 = " + !0;
+
+      let addToNum = 5;
+      addToNum += 2;
+      let subToNum = 7;
+      subToNum -= 3;
+      document.getElementById("addTo").innerHTML += " 5 += 2 = " + addToNum;
+      document.getElementById("subTo").innerHTML += " 7 -= 3 = " + subToNum;
 
       //Comparison
+      document.getElementById("equal").innerHTML += " '5' == 5 = " + ("5" == 5);
+      document.getElementById("equalVT").innerHTML +=
+        " '5' === 5 = " + ("5" === 5);
+      document.getElementById("nEqual").innerHTML += " 5 != 3 = " + (5 != 3);
+      document.getElementById("nEqualVT").innerHTML +=
+        ' "5" !== 3 = ' + ("5" !== 3);
+      document.getElementById("gThan").innerHTML += " 10 > 7 = " + (10 > 7);
+      document.getElementById("LThanOrEqual").innerHTML +=
+        " 12 <= 12 = " + (12 <= 12);
     </script>
   </body>
 </html>
