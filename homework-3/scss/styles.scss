@@ -1,0 +1,48 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  background-color: #dedede;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+/* End of Reset */
+.inputs {
+  padding: 50px;
+  div {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 7px;
+    label {
+      text-align: right;
+      margin-right: 4px;
+      min-width: 114px;
+    }
+  }
+  .btn {
+    input[type="button"] {
+      border-radius: 10px;
+      background-color: #f41d00;
+      padding: 5px 8px;
+      color: #fdfdfd;
+      margin-left: 118px;
+      cursor: pointer;
+    }
+  }
+}
+
+.results {
+  padding: 0 50px;
+}

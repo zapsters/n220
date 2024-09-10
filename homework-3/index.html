@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intrest Calculator</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="inputs">
+      <h1>Intrest Calculator!</h1>
+      <div>
+        <label for="principle">Principle [$]</label>
+        <input value="10000" type="number" name="principle" id="principle" />
+      </div>
+      <div>
+        <label for="intrestRate">Intrest Rate [%]</label>
+        <input value="2.56" type="number" name="intrestRate" id="intrestRate" />
+      </div>
+      <div>
+        <label for="time">Time [Years]</label>
+        <input value="8" type="number" name="time" id="time" />
+      </div>
+      <div class="btn">
+        <input type="button" value="Calculate" onclick="calculateIntrest()" />
+      </div>
+    </div>
+
+    <div class="results">
+      <h3>Your Results</h3>
+      <p id="response">This is text</p>
+    </div>
+
+    <script src="app/app.js"></script>
+  </body>
+</html>
