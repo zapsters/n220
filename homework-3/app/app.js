@@ -10,7 +10,7 @@ function calculateIntrest() {
   let total = principle * (1 + intrestRateFixed * time);
   let intrest = total - principle;
 
-  document.getElementById("response").innerHTML =
+  document.querySelector("#response").innerHTML =
     "With a beginning principal of $" +
     principle +
     " and with a growth rate of " +
