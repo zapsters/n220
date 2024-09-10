@@ -10,16 +10,22 @@ function calculateIntrest() {
   let total = principle * (1 + intrestRateFixed * time);
   let intrest = total - principle;
 
-  document.querySelector("#response").innerHTML =
-    "With a beginning principal of $" +
-    principle +
-    " and with a growth rate of " +
-    intrestRatePercent +
-    "% for " +
-    time +
-    " years, your total intrest will be $" +
-    intrest.toFixed(2) +
-    " with a grand total of $" +
-    total.toFixed(2) +
-    ".";
+  // document.querySelector("#response").innerHTML =
+  //   "With a beginning principal of $" +
+  //   principle +
+  //   " and with a growth rate of " +
+  //   intrestRatePercent +
+  //   "% for " +
+  //   time +
+  //   " years, your total intrest will be $" +
+  //   intrest.toFixed(2) +
+  //   " with a grand total of $" +
+  //   total.toFixed(2) +
+  //   ".";
+
+  document.querySelector(
+    "#response"
+  ).innerHTML = `With a beginning principal of $${principle} and with a growth rate of ${intrestRatePercent}% for ${time} years, your total intrest will be $${intrest.toFixed(
+    2
+  )} with a grand total of $${total.toFixed(2)}.`;
 }
