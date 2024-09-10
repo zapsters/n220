@@ -6,10 +6,10 @@ Link: https://in-info-web4.informatics.iupui.edu/~erballin/n220/homework-3/
 
 This homework assignment will:
 
-understanding basic disciplinary knowledge and methods/tools
-applying basic disciplinary/knowledge and problem-solving skills
-creating an interactive webpage implementing Javascript functionality
-challenge a student's understanding of functions.
+- understanding basic disciplinary knowledge and methods/tools
+- applying basic disciplinary/knowledge and problem-solving skills
+- creating an interactive webpage implementing Javascript functionality
+- challenge a student's understanding of functions.
 
 ## Task
 
