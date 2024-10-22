@@ -1,6 +1,6 @@
 # Homework 3 | Assignment
 
-Link: https://in-info-web4.informatics.iupui.edu/~erballin/n220/homework-3/
+Link: [https://in-info-web4.informatics.iupui.edu/~erballin/n220/homework-3/](https://zapsters.github.io/n220/homework-3/)
 
 ## Purpose
 
