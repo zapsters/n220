@@ -1,6 +1,6 @@
 # Homework 6 | Assignment
 
-Link: https://zapsters.github.io/n220/homework-6/
+Link: https://zapsters.github.io/n220/quiz6/
 
 ## Purpose
 
