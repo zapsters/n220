@@ -6,9 +6,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final Project</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
-    <link rel="stylesheet" href="css/styles.css" />
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin-bottom: 16px;
+    }
+
+    body > h1 {
+      background-color: #f08080;
+      padding: 16px;
+    }
+
+    body {
+      background-color: #90ee9075;
+    }
+
+    body > section {
+      padding: 0 12px;
+    }
+
+    .task {
+      border: 2px solid black;
+      border-radius: 5px;
+      width: 309px;
+      padding: 8px;
+      margin: 4px 0;
+    }
+    .task .inline {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
+    }
+
+    button {
+      padding: 4px;
+      background-color: #4f414f;
+      color: white;
+    }
+
+    button.red {
+      background-color: #811d1d;
+    }
+
+    button.blue {
+      background-color: #8f91d6;
+    }
+
+    .done h4 {
+      text-decoration: line-through;
+    }
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
   <body>
-    <p>come back later for the final project...</p>
+    <h1>Personal Task Manager</h1>
+    <section id="loginScreen" style="display: block">
+      <label for="username">Username: </label>
+      <input type="text" value1="erin!!" id="username" />
+      <br />
+      <label for="password">Password: </label>
+      <input type="password" value1="aaaaaaaa1A" id="password" />
+      <br />
+      <button onclick="checkLoginField()">Login</button>
+    </section>
+    <section id="taskScreen" style="display: none">
+      <div class="flex">
+        <h2>Welcome, <span id="usernameText">${username}</span></h2>
+        <button onclick="logout()">Logout</button>
+      </div>
+      <button onclick="addTask()">Add Task</button>
+      <div id="taskHolder"></div>
+    </section>
   </body>
+  <script>
+    var taskList = [];
+    let username = "null";
+    function logout() {
+      document.getElementById("loginScreen").style.display = "block";
+      document.getElementById("taskScreen").style.display = "none";
+    }
+    function checkLoginField() {
+      const usernameField = document.getElementById("username").value;
+      const passwordField = document.getElementById("password").value;
+      const containsNumber = /\d/.test(passwordField);
+      if (usernameField.length == 0) {
+        alert("Please enter a username.");
+      } else if (
+        passwordField.length < 8 ||
+        !/\d/.test(passwordField) ||
+        !/[A-Z]/.test(passwordField)
+      ) {
+        alert(
+          "Password must be at least 8 characters, including atleast a number and 1 capital letter."
+        );
+      } else {
+        // Login successful
+        username = usernameField;
+        document.getElementById("usernameText").innerHTML = username;
+        document.getElementById("loginScreen").style.display = "none";
+        document.getElementById("taskScreen").style.display = "block";
+      }
+    }
+    function addTask() {
+      var newTaskTitle = prompt("New task title:");
+      const taskHolder = document.getElementById("taskHolder");
+      taskList.push({ name: newTaskTitle, category: "none", done: 0 });
+      printTasks();
+    }
+    function printTasks() {
+      taskHolder.innerHTML = "";
+      taskList.forEach((obj, index) => {
+        console.log(obj);
+        taskHolder.innerHTML += `<div class="task" id="task${index}">
+          <h4 onclick="finishTask(${index})">${obj.name} (<span id="categoryText-task${index}">${obj.category}</span>)</h2>
+          <div class="inline">
+            <button class="red" onclick="removeTask(${index})">Remove</button>
+            <button class="blue" onclick="renameTask(${index})">Change Text</button>
+            <select name="" id="" onchange="updateCategory(this, ${index})">
+              <option value="No category">Choose Category</option>
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
+            </select>
+          </div>
+        </div>`;
+        if (obj.done == 1) {
+          document.getElementById(`task${index}`).classList.add("done");
+        }
+      });
+    }
+
+    function removeTask(index) {
+      taskList.splice(index, 1);
+      printTasks();
+    }
+
+    function finishTask(index) {
+      if (taskList[index].done == 0) {
+        taskList[index].done = 1;
+      } else {
+        taskList[index].done = 0;
+      }
+      printTasks();
+    }
+    function renameTask(index) {
+      var newTaskTitle = prompt("Edit task title:");
+      taskList[index].name = newTaskTitle;
+      printTasks();
+    }
+    function updateCategory(selectElement, taskIndex) {
+      taskList[taskIndex].category = selectElement.value;
+      console.log(taskIndex);
+      printTasks();
+    }
+  </script>
 </html>
